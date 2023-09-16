@@ -5,4 +5,6 @@ class UserPanelController {
     def index() {
 
     }
+
+
 }

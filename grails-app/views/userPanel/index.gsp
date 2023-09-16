@@ -30,51 +30,40 @@ th, td{
 tr:nth-child(even){background-color: #f2f2f2}
 .login-area
 {
-    border: 1px solid #bf753f;
+    border: 5px solid darkblue;
+    padding: 15px;
+    align-items: center;
+    width: 300px;
+    height: 250px;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
 
 </style>
 <body>
-<div>
-    <br/> <br/>
-    <table border="1">
-        <tr>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-        <g:each in="${fetched_value}" status="i" var="val">
-            <tr>
-                <td>
-                    ${val.name}
-                </td>
-                <td>
-                    ${val.age}
-                </td>
-            </tr>
-        </g:each>
-    </table>
 
-    <br/><br/>
 
-    <g:form name = "myform" url = "[controller: 'user_panel', action: 'login']">
-        <g:submitButton name = "submit_login" value = "Log in" />
-    </g:form>
-    <br>
-   <g:form name = "myform" url = "[controller: 'newTest', action: 'search']">
-        <g:submitButton name = "submit_clear" value = "Clear" />
-   </g:form>
+<div class="login-area">
 
-%{--    <div id="login-area">--}%
-%{--        <h1 class="text-center">Log in</h1>--}%
-%{--        <div class="submit-area">--}%
-%{--            <input type="text" class="form-control" placeholder="Email">--}%
-%{--            <br>--}%
-%{--            <input type="password" class="form-control" placeholder="Password" name="" id="">--}%
-%{--            <br>--}%
-%{--            <button id="login" class="btn btn-success">Enter</button>--}%
-%{--        </div>--}%
-%{--    </div>--}%
 
+<label>Email</label>
+<g:textField name = "Email" value = "" id = "email" />
+<br><br>
+<label>Password</label>
+<g:textField name = "Password" value = "" id = "password"/>
+<br><br>
+<button id = "button" name = "button" onClick = "addStd()">Log in</button>
+<button id = "button" name = "button" onClick = "addStd()">Clear</button>
+<p>Are you new here.</p> <g:link controller="userPanel" action="registration_panel">Register Now</g:link>
 
 </div>
 
